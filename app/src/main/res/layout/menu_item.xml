@@ -11,9 +11,8 @@
         android:layout_height="64dp"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:gravity="start|left|center_vertical"
+        android:layout_marginStart="20dp"
+        android:gravity="center_vertical"
         android:text="TextView"
-        android:textSize="24sp"
-
-        tools:layout_gravity="center" />
+        android:textSize="24sp" />
 </LinearLayout>

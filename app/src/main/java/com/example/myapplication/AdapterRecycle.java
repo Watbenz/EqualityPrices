@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AdapterRecycle extends RecyclerView.Adapter<AdapterRecycle.MyViewHolder> {
 
     private String[] items;
-//    private final View.OnClickListener = new
-
 
     @NonNull
     @Override

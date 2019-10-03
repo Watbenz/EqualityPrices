@@ -1,78 +1,73 @@
 package bill;
 
-import java.util.ArrayList;
+import android.annotation.SuppressLint;
 
-class Expense {
+import java.util.IllegalFormatException;
+
+public class Expense {
+    private String name;
     private double cost;
-    private final double originalCost;
-    private ArrayList<String> hist;
-    private int histPtr;
+    private double originalCost;
+    StringBuilder log;
+    public static final int PERCENT = 1;
+    public static final int VALUE = 2;
 
-    public Expense(double cost) {
-        this.cost = cost;
+    public Expense(String name) {
+        init(name, 0);
+    }
+
+    public Expense(String name, double cost) {
+        init(name, cost);
+    }
+
+    private void init(String name, double cost) {
         this.originalCost = cost;
-        this.hist = new ArrayList<>();
-        this.histPtr = 0;
+        this.cost = cost;
+        this.log = new StringBuilder();
     }
 
-    private void manage(String type, double cost, double val) {
+    private void manage(String type, double val, boolean isDiscount) {
+        if (isDiscount)  { val = -val; }
+
         switch (type) {
             case "percent":
-                this.cost = cost * ((val / 100.0) + 1);
+                this.cost = cost * (1 + (val / 100.0));
                 break;
             case "value":
-                this.cost = cost - val;
+                this.cost = cost + val;
                 break;
         }
     }
 
-    private void writeLog(String event, String oldVal, String type, String value) {
-        if (histPtr != hist.size()) {
-            hist.subList(histPtr + 1, hist.size()).clear();
-        }
-        hist.add(event + " " + oldVal + " " + type + " " + value);
-    }
-
-    public boolean discount(String type, double discountVal) {
-        String temp = String.valueOf(cost);
+    public void changeValue(double val, int type, boolean isDiscount) throws IllegalAccessException {
+        double oldCost = cost;
         switch (type) {
-            case "percent":
-                if (discountVal < 0 || discountVal > 100) {
-                    return false;
+            case PERCENT:
+                if (val < 0 || val > 100) {
+                    throw new IllegalAccessException("Percent must be in range 0 - 100");
                 }
-                manage("percent", cost, discountVal);
+                manage("percent", val, isDiscount);
                 break;
 
-            case "value":
-                if (discountVal < 0 || discountVal > this.cost) {
-                    return false;
+            case VALUE:
+                if (val < 0 || val > this.cost) {
+                    throw new IllegalAccessException("Value must be in range 0 - " + cost + " (cost)");
                 }
-                manage("value", cost, discountVal);
+                manage("value", val, isDiscount);
                 break;
         }
-        writeLog("-", temp, type, String.valueOf(discountVal));
-        return true;
+        @SuppressLint("DefaultLocale")
+        String l = String.format("%s %.2f%s from %.2f to %.2f\n", (isDiscount? "discount": "charge"), val, (type == PERCENT? "%":" Baht"), oldCost, cost);
+        this.log.append(l);
     }
 
-    public void undo() {
-        if (hist.size() <= 0) return;
-        String lastAction = hist.get(histPtr);
-        String[] actions = lastAction.split(" ");
-        this.cost = Double.parseDouble(actions[1]);
-        histPtr--;
-    }
-
-    public void redo() {
-        if (histPtr >= hist.size()) return;
-        histPtr++;
-        String nextAction = hist.get(histPtr);
-        String[] actions = nextAction.split(" ");
-        this.cost = Double.parseDouble(actions[1]);
-    }
-
-    public void clearHist() {
+    public void reset() {
         this.cost = this.originalCost;
-        hist.clear();
+        this.log = new StringBuilder();
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 
     public double getCost() {
@@ -81,5 +76,17 @@ class Expense {
 
     public double getOriginalCost() {
         return originalCost;
+    }
+
+    public StringBuilder getLog() {
+        return log;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
