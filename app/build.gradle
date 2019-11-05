@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -28,13 +29,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    // https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
     implementation group: 'androidx.recyclerview', name: 'recyclerview', version: '1.1.0-beta04'
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
-    // https://mvnrepository.com/artifact/com.android.support/appcompat-v7
-    // noinspection GradleCompatible
-    implementation group: 'com.android.support', name: 'appcompat-v7', version: '26.0.1'
-
-
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

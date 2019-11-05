@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Equality Prices</string>
+    <string name="person_image">person_image</string>
 </resources>
