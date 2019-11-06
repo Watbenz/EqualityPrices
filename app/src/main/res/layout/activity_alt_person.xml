@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AltPersonController">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView_penson_alt"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person_black_24dp" />
+
+        <Button
+            android:id="@+id/button_join_alt"
+            android:layout_width="54dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:text="เข้าร่วม"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_person_title_alt" />
+
+        <TextView
+            android:id="@+id/textView_person_title_alt"
+            android:layout_width="86dp"
+            android:layout_height="19dp"
+            android:gravity="center"
+            android:text="45 บาท"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_penson_alt" />
+
+        <TextView
+            android:id="@+id/textView_person_name"
+            android:layout_width="85dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="ฉัน"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView_penson_alt"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
