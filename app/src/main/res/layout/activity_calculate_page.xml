@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="42dp"
-                    android:text="TextView"
+                    android:text="ปุ่มลัด"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/spinner2" />
@@ -108,31 +108,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView18">
 
-                    <ScrollView
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
+                        android:layout_height="match_parent">
 
                         <LinearLayout
+                            android:id="@+id/linearLayout_scroll_button"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <Button
-                                android:id="@+id/button"
-                                android:layout_width="15dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:text="Button" />
-
-                            <Button
-                                android:id="@+id/button2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Button" />
-                        </LinearLayout>
-                    </ScrollView>
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
 
                 </LinearLayout>
 
@@ -233,6 +218,8 @@
                 android:id="@+id/next_person_display"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="40dp"
                 android:orientation="vertical" />
 
         </LinearLayout>

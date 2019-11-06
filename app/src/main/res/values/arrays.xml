@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colorFlower">
+        <item name="violet">@color/flowerViolet</item>
+        <item name="purple">@color/flowerPurple</item>
+        <item name="pink">@color/flowerPink</item>
+        <item name="orange">@color/flowerOrange</item>
+        <item name="yellow">@color/flowerYellow</item>
+    </array>
+</resources>

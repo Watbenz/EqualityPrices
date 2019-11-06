@@ -3,4 +3,35 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#555555</color>
+    <color name="lightYellow">#fffbf2</color>
+    <color name="blueGreen">#33CC99</color>
+    <color name="lightBlue">#CCFFFF</color>
+
+
+    <color name="flowerViolet">#855ec2</color>
+    <color name="flowerPurple">#d65db1</color>
+    <color name="flowerPink">#fe6f91</color>
+    <color name="flowerOrange">#fe9670</color>
+    <color name="flowerYellow">#fec75f</color>
+
+    <color name="shorelineStorm">#0c2431</color>
+    <color name="shorelineTeal">#194a50</color>
+    <color name="shorelineSunburst">#d37556</color>
+    <color name="shorelineSand">#d8a28c</color>
+    <color name="shorelineCloud">#e1dad2</color>
+
+    <color name="wildWaterMelonPink">#ff7b7b</color>
+    <color name="wildWaterMelonRose">#ff545e</color>
+    <color name="wildWaterMelonCyan">#589ea5</color>
+    <color name="wildWaterMelonTeal">#6ec2b1</color>
+    <color name="wildWaterMelonArctic">#95e3bb</color>
+
+    <color name="fairyYellow">#fffbf2</color>
+    <color name="fairyPink">#ffe7e7</color>
+    <color name="fairyViolet">#ddd7e5</color>
+    <color name="fairyBlue">#b8cbe1</color>
+    <color name="fairyPurple">#adb8d6</color>
+
 </resources>
